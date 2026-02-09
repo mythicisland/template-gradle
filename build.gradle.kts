@@ -3,7 +3,6 @@ plugins {
 }
 
 allprojects {
-
     group = "net.mythicisland.template"
     version = "0.0.1"
 
