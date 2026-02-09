@@ -22,7 +22,6 @@ class TemplateRuntime(
         setupDatabase()
         loadData()
         WebServer.start(args.restHost, args.restPort)
-        logger.info("Starting Rest Server on ${args.restHost}:${args.restPort}...")
     }
 
     private fun connectToController() {

@@ -9,12 +9,16 @@ import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.json.Json
+import org.apache.logging.log4j.LogManager
 
 object WebServer {
     private lateinit var server: EmbeddedServer<*, *>
 
+    private val logger = LogManager.getLogger(WebServer::class.java)
+
     fun start(host: String, port: Int) {
         server = embeddedServer(Netty, host = host, port = port, module = Application::module)
+        logger.info("Starting Rest Server on $host:$port...")
         server.start(wait = true)
     }
 
