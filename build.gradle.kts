@@ -20,8 +20,6 @@ subprojects {
     apply(plugin = "java")
 
     dependencies {
-        testImplementation(rootProject.libs.kotlin.test)
-        implementation(rootProject.libs.kotlinx.coroutines.core)
     }
 
     tasks.test {

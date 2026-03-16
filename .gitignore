@@ -1,41 +1,20 @@
-### Gradle ###
-.gradle
+# Gradle
+.gradle/
 build/
 
-### IntelliJ IDEA ###
+# Intellij IDEA
 .idea/
-*.iws
-*.iml
-*.ipr
-out/
 
-### Kotlin ###
-.kotlin
+# Kotlin
+.kotlin/
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
-### Mac OS ###
+# Mac OS
 .DS_Store
 
-### Run Task ##
+# Other IDE Shit
+.vscode/
+.cursor/
+
+# Other
+logs/
 run/

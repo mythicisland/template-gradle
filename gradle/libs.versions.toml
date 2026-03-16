@@ -1,7 +1,7 @@
 [versions]
 # Kotlin
-kotlin = "2.1.20"
-kotlin-serialization = "2.1.20"
+kotlin = "2.2.20"
+kotlin-serialization = "2.2.20"
 
 # Logging
 log4j = "2.25.3"
