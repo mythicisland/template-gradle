@@ -1,8 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":dependencyDashboard"
   ],
+  "dependencyDashboardApproval": false,
   "labels": ["dependencies"],
   "reviewers": ["xXJanisXx"],
   "packageRules": [
@@ -20,15 +22,32 @@
       "groupName": "minor dependencies"
     },
     {
-      "description": "Dependencies whose updates shouldn't be done automatically",
+      "description": "Kotlin and related dependencies are updated manually",
       "matchPackageNames": [
         "org.jetbrains.kotlin:kotlin-stdlib",
         "org.jetbrains.kotlin:kotlin-test",
         "org.jetbrains.kotlin.jvm",
         "org.jetbrains.kotlin.plugin.serialization",
         "org.jetbrains.kotlinx:kotlinx-coroutines-core",
-        "org.jetbrains.kotlinx:kotlinx-serialization-json",
-        "io.ktor:ktor-**",
+        "org.jetbrains.kotlinx:kotlinx-serialization-json"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Ktor is updated manually",
+      "matchPackageNames": [
+        "io.ktor:ktor-server-core",
+        "io.ktor:ktor-server-netty",
+        "io.ktor:ktor-server-websockets",
+        "io.ktor:ktor-server-cors",
+        "io.ktor:ktor-server-content-negotiation",
+        "io.ktor:ktor-serialization-kotlinx-json"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "Clikt is updated manually",
+      "matchPackageNames": [
         "com.github.ajalt.clikt:clikt"
       ],
       "enabled": false
