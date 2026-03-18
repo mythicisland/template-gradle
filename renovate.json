@@ -1,10 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    ":dependencyDashboard"
+    "config:recommended"
   ],
-  "dependencyDashboardApproval": false,
   "labels": ["dependencies"],
   "reviewers": ["xXJanisXx"],
   "packageRules": [
@@ -31,6 +29,7 @@
         "org.jetbrains.kotlinx:kotlinx-coroutines-core",
         "org.jetbrains.kotlinx:kotlinx-serialization-json"
       ],
+      "matchManagers": ["gradle"],
       "enabled": false
     },
     {
