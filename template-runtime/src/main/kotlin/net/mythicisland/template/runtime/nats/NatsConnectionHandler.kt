@@ -10,6 +10,7 @@ class NatsConnectionHandler : ConnectionListener {
     private val callbacks = CopyOnWriteArrayList<NatsConnectionStateCallback>()
     private var lastConnectionState: Boolean? = null
 
+    @Suppress("OVERRIDE_DEPRECATION")
     override fun connectionEvent(conn: Connection, type: ConnectionListener.Events) {
         when (type) {
             ConnectionListener.Events.CONNECTED -> {
