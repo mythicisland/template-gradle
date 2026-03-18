@@ -22,32 +22,22 @@
     {
       "description": "Kotlin and related dependencies are updated manually",
       "matchPackageNames": [
-        "org.jetbrains.kotlin:kotlin-stdlib",
-        "org.jetbrains.kotlin:kotlin-test",
-        "org.jetbrains.kotlin.jvm",
-        "org.jetbrains.kotlin.plugin.serialization",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-core",
-        "org.jetbrains.kotlinx:kotlinx-serialization-json"
+        "org.jetbrains.kotlin**",
+        "org.jetbrains.kotlinx**"
       ],
-      "matchManagers": ["gradle"],
       "enabled": false
     },
     {
       "description": "Ktor is updated manually",
       "matchPackageNames": [
-        "io.ktor:ktor-server-core",
-        "io.ktor:ktor-server-netty",
-        "io.ktor:ktor-server-websockets",
-        "io.ktor:ktor-server-cors",
-        "io.ktor:ktor-server-content-negotiation",
-        "io.ktor:ktor-serialization-kotlinx-json"
+        "io.ktor**"
       ],
       "enabled": false
     },
     {
       "description": "Clikt is updated manually",
       "matchPackageNames": [
-        "com.github.ajalt.clikt:clikt"
+        "com.github.ajalt.clikt**"
       ],
       "enabled": false
     }
