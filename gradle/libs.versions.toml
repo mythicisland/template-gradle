@@ -1,7 +1,6 @@
 [versions]
 # Kotlin
 kotlin = "2.2.20"
-kotlin-serialization = "2.2.20"
 
 # Logging
 log4j = "2.25.3"
@@ -11,35 +10,36 @@ slf4j = "2.0.17"
 configurate = "4.2.0"
 
 # Plugins
-foojay-resolver = "1.0.0"
-shadow = "9.3.1"
+shadow = "9.3.2"
 
 # Other dependencies
 kotlinx-coroutines = "1.10.2"
 kotlinx-serialization-json = "1.8.1"
 clikt = "5.0.3"
-jnats = "2.25.1"
+jnats = "2.25.2"
 adventure = "4.26.1"
-okhttp = "5.3.2"
-cloud-api = "0.1.0-platform.17-dev.1770509030341-a76654a"
-commons-io = "2.21.0"
-gson = "2.13.2"
-postgre = "42.7.9"
+cloud-api = "0.1.0-platform.20-dev.1771710355025-becd984"
+postgre = "42.7.10"
 caffeine = "3.2.3"
 
 # JOOQ
 jooq = "3.20.11"
 
 # Proto Buf
-protobuf = "4.33.5"
+protobuf = "4.34.0"
 grpc = "1.79.0"
 grpc-kotlin = "1.5.0"
 
 # Ktor
 ktor = "3.2.2"
 
+# Minecraft
+velocity = "3.5.0-SNAPSHOT"
+paper = "1.21.11-R0.1-SNAPSHOT"
+
 [libraries]
 # Kotlin
+kotlin-jvm = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
@@ -52,21 +52,18 @@ slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
 
 # Configurate
 configurate-yaml = { module = "org.spongepowered:configurate-yaml", version.ref = "configurate" }
-configurate-gson = { module = "org.spongepowered:configurate-gson", version.ref = "configurate" }
 configurate-extra-kotlin = { module = "org.spongepowered:configurate-extra-kotlin", version.ref = "configurate" }
 
 # Other dependencies
 clikt = { module = "com.github.ajalt.clikt:clikt", version.ref = "clikt" }
 jnats = { module = "io.nats:jnats", version.ref = "jnats" }
-okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
-commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }
-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 caffeine = { module = "com.github.ben-manes.caffeine:caffeine", version.ref = "caffeine" }
 postgre-jdbc = { module = "org.postgresql:postgresql", version.ref = "postgre" }
 cloud-api = { module = "app.simplecloud.api:api", version.ref = "cloud-api" }
 
 # Adventure
 adventure-api = { module = "net.kyori:adventure-api", version.ref = "adventure" }
+adventure-text-minimessage = { module = "net.kyori:adventure-text-minimessage", version.ref = "adventure" }
 adventure-text-serializer-gson = { module = "net.kyori:adventure-text-serializer-gson", version.ref = "adventure" }
 
 # JOOQ
@@ -91,17 +88,20 @@ grpc-kotlin-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpc-ko
 grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
 grpc-netty-shaded = { module = "io.grpc:grpc-netty-shaded", version.ref = "grpc" }
 
+# Minecraft
+velocity-api = { module = "com.velocitypowered:velocity-api", version.ref = "velocity" }
+paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
+
 [bundles]
 logging = ["log4j-core", "log4j-api", "log4j-slf4j-impl", "slf4j-api"]
-adventure = ["adventure-text-serializer-gson", "adventure-api"]
-configurate = ["configurate-yaml", "configurate-gson", "configurate-extra-kotlin"]
+adventure = ["adventure-text-serializer-gson", "adventure-api", "adventure-text-minimessage"]
+configurate = ["configurate-yaml", "configurate-extra-kotlin"]
 jooq = ["jooq-kotlin-coroutines", "jooq", "jooq-meta-extensions", "jooq-meta"]
 ktor-server = ["ktor-serialization-kotlinx-json", "ktor-server-netty", "ktor-server-content-negotiation", "ktor-server-core", "ktor-server-cors", "ktor-server-websockets"]
 grpc = ["grpc-stub", "grpc-netty-shaded", "grpc-kotlin-stub", "grpc-protobuf", "protobuf-kotlin"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization" }
-foojay-resolver = { id = "org.gradle.toolchains.foojay-resolver-convention", version.ref = "foojay-resolver" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 jooq-codegen = { id = "org.jooq.jooq-codegen-gradle", version.ref = "jooq" }
