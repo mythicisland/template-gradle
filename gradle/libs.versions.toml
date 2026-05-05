@@ -18,12 +18,12 @@ kotlinx-serialization-json = "1.8.1"
 clikt = "5.0.3"
 jnats = "2.25.2"
 adventure = "5.0.1"
-cloud-api = "0.1.0-platform.22-dev.1774376168759-1e20f57"
-postgre = "42.7.10"
-caffeine = "3.2.3"
+cloud-api = "0.1.0-platform.29-dev.1777216779595-3228d3d"
+postgre = "42.7.11"
+caffeine = "3.2.4"
 
 # JOOQ
-jooq = "3.21.1"
+jooq = "3.21.3"
 
 # Proto Buf
 protobuf = "4.34.1"
