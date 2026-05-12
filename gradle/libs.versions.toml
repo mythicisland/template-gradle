@@ -4,7 +4,7 @@ kotlin = "2.2.20"
 
 # Logging
 log4j = "2.26.0"
-slf4j = "2.0.17"
+slf4j = "2.0.18"
 
 # Configurate
 configurate = "4.2.0"
@@ -23,7 +23,7 @@ postgre = "42.7.11"
 caffeine = "3.2.4"
 
 # JOOQ
-jooq = "3.21.3"
+jooq = "3.21.4"
 
 # Proto Buf
 protobuf = "4.34.1"
