@@ -1,28 +1,23 @@
 [versions]
 # Kotlin
 kotlin = "2.2.20"
+kotlin-coroutines = "1.10.2"
 
 # Logging
 log4j = "2.26.0"
 slf4j = "2.0.18"
 
-# Configurate
-configurate = "4.2.0"
-
 # Plugins
 shadow = "9.4.1"
 
 # Other dependencies
-kotlinx-coroutines = "1.10.2"
-kotlinx-serialization-json = "1.8.1"
 clikt = "5.0.3"
 jnats = "2.25.3"
 adventure = "5.1.1"
 cloud-api = "0.1.0-platform.29-dev.1777216779595-3228d3d"
 postgre = "42.7.11"
 caffeine = "3.2.4"
-
-# JOOQ
+configurate = "4.2.0"
 jooq = "3.21.4"
 
 # Proto Buf
@@ -30,19 +25,10 @@ protobuf = "4.35.0"
 grpc = "1.81.0"
 grpc-kotlin = "1.5.0"
 
-# Ktor
-ktor = "3.2.2"
-
-# Minecraft
-velocity = "3.5.0-SNAPSHOT"
-paper = "1.21.11-R0.1-SNAPSHOT"
-
 [libraries]
 # Kotlin
-kotlin-jvm = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test" }
-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
 
 # Logging
 log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
@@ -72,14 +58,6 @@ jooq-meta = { module = "org.jooq:jooq-meta", version.ref = "jooq" }
 jooq-meta-extensions = { module = "org.jooq:jooq-meta-extensions", version.ref = "jooq" }
 jooq-kotlin-coroutines = { module = "org.jooq:jooq-kotlin-coroutines", version.ref = "jooq" }
 
-# Ktor
-ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
-ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
-ktor-server-websockets = { module = "io.ktor:ktor-server-websockets", version.ref = "ktor" }
-ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
-ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
-ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
-
 # Proto Buf
 protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "protobuf" }
 
@@ -88,20 +66,14 @@ grpc-kotlin-stub = { module = "io.grpc:grpc-kotlin-stub", version.ref = "grpc-ko
 grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc" }
 grpc-netty-shaded = { module = "io.grpc:grpc-netty-shaded", version.ref = "grpc" }
 
-# Minecraft
-velocity-api = { module = "com.velocitypowered:velocity-api", version.ref = "velocity" }
-paper-api = { module = "io.papermc.paper:paper-api", version.ref = "paper" }
-
 [bundles]
 logging = ["log4j-core", "log4j-api", "log4j-slf4j-impl", "slf4j-api"]
 adventure = ["adventure-text-serializer-gson", "adventure-api", "adventure-text-minimessage"]
 configurate = ["configurate-yaml", "configurate-extra-kotlin"]
 jooq = ["jooq-kotlin-coroutines", "jooq", "jooq-meta-extensions", "jooq-meta"]
-ktor-server = ["ktor-serialization-kotlinx-json", "ktor-server-netty", "ktor-server-content-negotiation", "ktor-server-core", "ktor-server-cors", "ktor-server-websockets"]
 grpc = ["grpc-stub", "grpc-netty-shaded", "grpc-kotlin-stub", "grpc-protobuf", "protobuf-kotlin"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 jooq-codegen = { id = "org.jooq.jooq-codegen-gradle", version.ref = "jooq" }

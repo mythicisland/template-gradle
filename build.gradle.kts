@@ -8,43 +8,45 @@ plugins {
 
 allprojects {
     group = "net.mythicisland.template"
-    version = "0.0.1"
+    version = "1.0.0"
 
     repositories {
         mavenCentral()
         maven("https://repo.simplecloud.app/snapshots")
         maven("https://repo.xxjanisxx.dev/releases")
+        maven("https://repo.xxjanisxx.dev/snapshots")
         maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://buf.build/gen/maven")
     }
 }
 
 subprojects {
-    apply(plugin = "kotlin")
-    apply(plugin = "java")
-    apply(plugin = "com.gradleup.shadow")
+    apply {
+        plugin("kotlin")
+        plugin("java")
+        plugin("com.gradleup.shadow")
+    }
 
     dependencies {
         testImplementation(rootProject.libs.kotlin.test)
-        implementation(rootProject.libs.kotlin.jvm)
         implementation(rootProject.libs.kotlinx.coroutines.core)
-    }
-
-    tasks.test {
-        useJUnitPlatform()
     }
 
     kotlin {
         jvmToolchain(21)
         compilerOptions {
-            apiVersion.set(KotlinVersion.KOTLIN_2_0)
-            jvmTarget.set(JvmTarget.JVM_21)
-            freeCompilerArgs.add("-Xannotation-default-target=param-property")
+            apiVersion = KotlinVersion.KOTLIN_2_3
+            jvmTarget = JvmTarget.JVM_21
+            freeCompilerArgs = listOf("-Xannotation-default-target=param-property")
         }
     }
 
     java {
         toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    }
+
+    tasks.test {
+        useJUnitPlatform()
     }
 
     tasks.shadowJar {

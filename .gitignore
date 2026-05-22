@@ -1,9 +1,5 @@
-# Gradle
 .gradle/
 build/
-
-# Intellij IDEA
-.idea/
 
 # Kotlin
 .kotlin/
@@ -11,9 +7,9 @@ build/
 # Mac OS
 .DS_Store
 
-# Other IDE Shit
+# IDE Shit
+.idea/
 .vscode/
-.cursor/
 
 # Other
 logs/

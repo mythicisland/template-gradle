@@ -3,15 +3,3 @@ plugins {
 }
 
 rootProject.name = "template-gradle"
-
-dependencyResolutionManagement {
-    versionCatalogs {
-        create("libs")
-    }
-}
-
-include(
-    "template-api",
-    "template-runtime",
-    "template-shared"
-)

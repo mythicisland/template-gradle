@@ -4,42 +4,17 @@
     "config:recommended"
   ],
   "labels": ["dependencies"],
-  "reviewers": ["xXJanisXx"],
+  "schedule": ["at 7am on monday"],
+  "timezone": "Europe/Berlin",
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
       "groupName": "github actions"
     },
     {
-      "matchUpdateTypes": ["patch"],
-      "matchPackageNames": ["*", "!gradle"],
-      "groupName": "all dependencies with patch changes"
-    },
-    {
-      "matchUpdateTypes": ["minor"],
-      "groupName": "minor dependencies"
-    },
-    {
-      "description": "Kotlin and related dependencies are updated manually",
-      "matchPackageNames": [
-        "org.jetbrains.kotlin**",
-        "org.jetbrains.kotlinx**"
-      ],
-      "enabled": false
-    },
-    {
-      "description": "Ktor is updated manually",
-      "matchPackageNames": [
-        "io.ktor**"
-      ],
-      "enabled": false
-    },
-    {
-      "description": "Clikt is updated manually",
-      "matchPackageNames": [
-        "com.github.ajalt.clikt**"
-      ],
-      "enabled": false
+      "matchPackageNames": ["*"],
+      "excludeManagers": ["github-actions"],
+      "groupName": "all dependencies"
     }
   ],
   "prHourlyLimit": 10,
@@ -47,5 +22,6 @@
   "rebaseLabel": "s: rebase",
   "stopUpdatingLabel": "s: stop updates",
   "commitMessagePrefix": "chore: ",
-  "commitMessageAction": "update"
+  "commitMessageAction": "update",
+  "commitMessageSuffix": " [skip ci]"
 }
