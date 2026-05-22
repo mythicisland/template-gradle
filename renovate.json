@@ -1,8 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended"],
   "labels": ["dependencies"],
   "schedule": ["at 7am on monday"],
   "timezone": "Europe/Berlin",
@@ -12,8 +10,7 @@
       "groupName": "github actions"
     },
     {
-      "matchPackageNames": ["*"],
-      "excludeManagers": ["github-actions"],
+      "matchManagers": ["!github-actions"],
       "groupName": "all dependencies"
     }
   ],
