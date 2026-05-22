@@ -17,7 +17,7 @@ kotlinx-coroutines = "1.10.2"
 kotlinx-serialization-json = "1.8.1"
 clikt = "5.0.3"
 jnats = "2.25.3"
-adventure = "5.0.1"
+adventure = "5.1.1"
 cloud-api = "0.1.0-platform.29-dev.1777216779595-3228d3d"
 postgre = "42.7.11"
 caffeine = "3.2.4"
@@ -26,7 +26,7 @@ caffeine = "3.2.4"
 jooq = "3.21.4"
 
 # Proto Buf
-protobuf = "4.34.1"
+protobuf = "4.35.0"
 grpc = "1.81.0"
 grpc-kotlin = "1.5.0"
 
