@@ -8,7 +8,7 @@ log4j = "2.26.0"
 slf4j = "2.0.18"
 
 # Plugins
-shadow = "9.4.1"
+shadow = "9.4.2"
 
 # Other dependencies
 clikt = "5.1.0"
