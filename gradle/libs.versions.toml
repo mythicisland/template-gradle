@@ -1,28 +1,28 @@
 [versions]
 # Kotlin
-kotlin = "2.3.21"
+kotlin = "2.4.10"
 kotlin-coroutines = "1.11.0"
 
 # Logging
-log4j = "2.26.0"
+log4j = "2.26.1"
 slf4j = "2.0.18"
 
 # Plugins
-shadow = "9.4.2"
+shadow = "9.6.1"
 
 # Other dependencies
 clikt = "5.1.0"
-jnats = "2.25.3"
-adventure = "5.1.1"
-cloud-api = "0.1.0-platform.30-dev.1779808903098-53ec137"
-postgre = "42.7.11"
+jnats = "2.26.0"
+adventure = "5.2.0"
+cloud-api = "0.1.0-platform.50-dev.1.1-a2c6b8c"
+postgre = "42.7.13"
 caffeine = "3.2.4"
 configurate = "4.2.0"
-jooq = "3.21.4"
+jooq = "3.21.6"
 
 # Proto Buf
-protobuf = "4.35.0"
-grpc = "1.81.0"
+protobuf = "4.35.1"
+grpc = "1.83.0"
 grpc-kotlin = "1.5.0"
 
 [libraries]
