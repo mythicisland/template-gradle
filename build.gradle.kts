@@ -13,8 +13,7 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://repo.simplecloud.app/snapshots")
-        maven("https://repo.xxjanisxx.dev/releases")
-        maven("https://repo.xxjanisxx.dev/snapshots")
+        maven("https://repo.mythicisland.net/public")
         maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://buf.build/gen/maven")
     }
@@ -23,7 +22,6 @@ allprojects {
 subprojects {
     apply {
         plugin("kotlin")
-        plugin("java")
         plugin("com.gradleup.shadow")
     }
 
@@ -33,16 +31,16 @@ subprojects {
     }
 
     kotlin {
-        jvmToolchain(21)
+        jvmToolchain(25)
         compilerOptions {
-            apiVersion = KotlinVersion.KOTLIN_2_3
-            jvmTarget = JvmTarget.JVM_21
-            freeCompilerArgs = listOf("-Xannotation-default-target=param-property")
+            jvmTarget = JvmTarget.JVM_25
+            languageVersion = KotlinVersion.KOTLIN_2_4
+            apiVersion = KotlinVersion.KOTLIN_2_4
         }
     }
 
     java {
-        toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+        toolchain.languageVersion.set(JavaLanguageVersion.of(25))
     }
 
     tasks.test {
@@ -53,4 +51,13 @@ subprojects {
         mergeServiceFiles()
         archiveFileName.set("${project.name}.jar")
     }
+
+    tasks.processResources {
+        filesMatching("plugin.yml") {
+            expand(
+                "version" to project.version
+            )
+        }
+    }
+
 }
