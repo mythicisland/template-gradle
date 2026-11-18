@@ -11,14 +11,14 @@ slf4j = "2.0.20"
 shadow = "9.6.1"
 
 # Other dependencies
-clikt = "5.1.0"
-jnats = "2.26.4"
+clikt = "5.2.1"
+jnats = "2.27.0"
 adventure = "5.2.0"
 cloud-api = "0.1.0-platform.61-dev.8.1-9a2bef3"
 postgre = "42.7.14"
 caffeine = "3.3.1"
 configurate = "4.2.0"
-jooq = "3.21.9"
+jooq = "3.21.10"
 
 # Proto Buf
 protobuf = "4.36.2"
